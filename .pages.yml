@@ -58,7 +58,7 @@ content:
             - { name: strategy, label: Project strategy }
             - { name: analytics, label: Analytics }
             - { name: visualization, label: Visualization }
-      - { name: workType, label: Work classification, type: string, required: true, description: Example: Applied project · Predictive analytics }
+      - { name: workType, label: Work classification, type: string, required: true, description: "Example: Applied project · Predictive analytics" }
       - { name: title, label: Project title, type: string, required: true }
       - { name: summary, label: Executive summary, type: text, required: true }
       - { name: focus, label: Primary focus, type: string }
