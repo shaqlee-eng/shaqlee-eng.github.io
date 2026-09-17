@@ -1,0 +1,183 @@
+media:
+  - name: images
+    label: Images and screenshots
+    input: uploads/images
+    output: uploads/images
+    categories: [image]
+    rename: safe
+  - name: documents
+    label: Documents and source files
+    input: uploads/documents
+    output: uploads/documents
+    categories: [document, spreadsheet, compressed, code]
+    rename: safe
+
+content:
+  - name: profile
+    label: Profile and About
+    type: file
+    path: content/profile.json
+    format: json
+    fields:
+      - { name: name, label: Full name, type: string, required: true }
+      - { name: role, label: Professional identity, type: text, required: true }
+      - { name: heroIntro, label: Homepage introduction, type: text, required: true }
+      - { name: aboutHeading, label: About page heading, type: string, required: true }
+      - name: aboutParagraphs
+        label: About page paragraphs
+        type: text
+        list: true
+      - name: headshot
+        label: Professional headshot
+        type: image
+        options:
+          media: images
+      - { name: headshotAlt, label: Headshot description, type: string }
+
+  - name: projects
+    label: Projects and Case Studies
+    type: file
+    path: content/projects.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: URL identifier
+        type: string
+        required: true
+        description: Use lowercase letters, numbers, and hyphens only.
+        pattern: "^[a-z0-9-]+$"
+      - { name: published, label: Show on website, type: boolean }
+      - { name: featured, label: Feature on homepage, type: boolean }
+      - name: category
+        label: Filter category
+        type: select
+        required: true
+        options:
+          values:
+            - { name: strategy, label: Project strategy }
+            - { name: analytics, label: Analytics }
+            - { name: visualization, label: Visualization }
+      - { name: workType, label: Work classification, type: string, required: true, description: Example: Applied project · Predictive analytics }
+      - { name: title, label: Project title, type: string, required: true }
+      - { name: summary, label: Executive summary, type: text, required: true }
+      - { name: focus, label: Primary focus, type: string }
+      - { name: domain, label: Business domain, type: string }
+      - { name: scale, label: Scale or scope, type: string }
+      - { name: tools, label: Tools and methods, type: string, list: true }
+      - { name: highlights, label: Work demonstrated, type: text, list: true }
+      - { name: statusNote, label: Placeholder or disclosure note, type: text }
+      - name: images
+        label: Screenshots and visuals
+        type: image
+        list: true
+        options:
+          media: images
+      - name: documents
+        label: Downloadable documents
+        type: file
+        list: true
+        options:
+          media: documents
+          extensions: [pdf, doc, docx, xls, xlsx, csv, r, rmd, zip]
+          rename: safe
+
+  - name: research
+    label: Professional Research
+    type: file
+    path: content/research.json
+    format: json
+    fields:
+      - { name: title, label: Research title, type: text, required: true }
+      - { name: team, label: Team or organization, type: string, required: true }
+      - { name: overview, label: Public overview, type: text, required: true }
+      - { name: publicNote, label: Public disclosure note, type: text }
+      - { name: population, label: Population and setting, type: text }
+      - { name: exposure, label: Primary exposure, type: text }
+      - { name: outcome, label: Outcome, type: text }
+      - { name: approach, label: Analytical approach, type: text }
+      - { name: interpretation, label: Interpretation, type: text }
+      - { name: publicationStatus, label: Publication status, type: string }
+      - name: publications
+        label: Publications and presentations
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: citation, label: Full citation, type: text }
+          - { name: abstract, label: Approved abstract, type: text }
+          - { name: url, label: DOI or public URL, type: string }
+          - name: document
+            label: Public document
+            type: file
+            options:
+              media: documents
+              categories: [document]
+              extensions: [pdf, doc, docx]
+              rename: safe
+
+  - name: resume
+    label: Resume
+    type: file
+    path: content/resume.json
+    format: json
+    fields:
+      - { name: summary, label: Professional summary, type: text, required: true }
+      - { name: location, label: Location, type: string }
+      - { name: skills, label: Core capabilities, type: string, list: true }
+      - name: experience
+        label: Professional experience
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} · {organization}"
+        fields:
+          - { name: dates, label: Dates, type: string }
+          - { name: title, label: Role title, type: string, required: true }
+          - { name: organization, label: Organization, type: string, required: true }
+          - { name: details, label: Responsibilities and impact, type: text }
+      - name: education
+        label: Education
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} · {organization}"
+        fields:
+          - { name: dates, label: Date or expected date, type: string }
+          - { name: title, label: Degree, type: string, required: true }
+          - { name: organization, label: Institution, type: string, required: true }
+          - { name: details, label: Concentration or notes, type: text }
+      - name: resumeDocument
+        label: Downloadable resume PDF
+        type: file
+        options:
+          media: documents
+          extensions: [pdf]
+          rename: safe
+
+  - name: contact
+    label: Contact and Role Interests
+    type: file
+    path: content/contact.json
+    format: json
+    fields:
+      - { name: email, label: Professional email, type: string }
+      - { name: linkedin, label: LinkedIn URL, type: string }
+      - { name: github, label: GitHub URL, type: string }
+      - { name: availability, label: Availability message, type: string }
+      - { name: roles, label: Roles of interest, type: string, list: true }
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "Add {name} content via Pages CMS"
+      update: "Update {name} via Pages CMS"
+      delete: "Remove {name} via Pages CMS"
