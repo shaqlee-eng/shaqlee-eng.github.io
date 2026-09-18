@@ -6,15 +6,21 @@
     "category": "strategy",
     "workType": "Applied project · Project management",
     "title": "Project Helios",
-    "summary": "A project management case centered on a 150 MW solar photovoltaic development with battery storage. The portfolio treatment emphasizes coordinated planning across a complex infrastructure initiative.",
-    "focus": "Scope and delivery",
-    "domain": "Renewable energy",
-    "scale": "150 MW",
-    "tools": ["Project planning", "Power BI"],
-    "highlights": ["Project scope and work breakdown thinking", "Schedule and milestone planning", "Budget, risk, and stakeholder considerations", "Executive communication and visual reporting"],
-    "statusNote": "Add approved schedule views, WBS excerpts, budget summary, risk register, Power BI visuals, and final recommendations.",
-    "images": [],
-    "documents": []
+    "summary": "An academic project management case for a 150 MW utility-scale solar photovoltaic development with battery energy storage and grid interconnection. The work integrates scope, schedule, cost, governance, contractor responsibilities, risk, and stakeholder planning across the full project life cycle.",
+    "focus": "Integrated project controls",
+    "domain": "Renewable energy infrastructure",
+    "scale": "150 MW solar PV with battery storage · $500M planning baseline · 50-month schedule",
+    "tools": [
+      "Excel budget and cost modeling",
+      "WBS, schedule, risk, and stakeholder planning"
+    ],
+    "highlights": [
+      "Structured the project from site feasibility and permitting through engineering, procurement, construction, commissioning, and closeout",
+      "Reconciled a task-level cost model to a $500 million planning baseline, including a $26.852 million contingency reserve",
+      "Built phase summaries, monthly spend allocations, labor-hour estimates, source notes, and validation checks",
+      "Mapped multi-party contractor responsibilities and defined governance, stakeholder priorities, risks, assumptions, constraints, and milestone acceptance criteria"
+    ],
+    "statusNote": "Academic planning scenario developed for coursework. Figures represent project assumptions and do not describe an actual Amazon or AWS capital project. Source files remain unpublished while presentation figures and public-use permissions are reviewed."
   },
   {
     "id": "predictive",
@@ -27,11 +33,17 @@
     "focus": "Model evaluation",
     "domain": "To be verified",
     "scale": "To be verified",
-    "tools": ["R", "Excel"],
-    "highlights": ["Question and target definition", "Feature preparation and analytical workflow", "Performance evaluation and model comparison", "Business interpretation with appropriate caveats"],
-    "statusNote": "Replace with the verified dataset, target variable, evaluation metrics, findings, and selected visuals.",
-    "images": [],
-    "documents": []
+    "tools": [
+      "R",
+      "Excel"
+    ],
+    "highlights": [
+      "Question and target definition",
+      "Feature preparation and analytical workflow",
+      "Performance evaluation and model comparison",
+      "Business interpretation with appropriate caveats"
+    ],
+    "statusNote": "Replace with the verified dataset, target variable, evaluation metrics, findings, and selected visuals."
   },
   {
     "id": "segmentation",
@@ -44,11 +56,18 @@
     "focus": "Segmentation",
     "domain": "To be verified",
     "scale": "To be verified",
-    "tools": ["R", "Clustering", "k-NN"],
-    "highlights": ["Data scaling and feature selection", "Cluster exploration and profile interpretation", "k-NN setup and performance assessment", "Translation of technical output into audience-ready findings"],
-    "statusNote": "Add verified dataset context, cluster profiles, k selection process, performance results, and implications.",
-    "images": [],
-    "documents": []
+    "tools": [
+      "R",
+      "Clustering",
+      "k-NN"
+    ],
+    "highlights": [
+      "Data scaling and feature selection",
+      "Cluster exploration and profile interpretation",
+      "k-NN setup and performance assessment",
+      "Translation of technical output into audience-ready findings"
+    ],
+    "statusNote": "Add verified dataset context, cluster profiles, k selection process, performance results, and implications."
   },
   {
     "id": "excel-modeling",
@@ -61,11 +80,17 @@
     "focus": "Traceable decision modeling",
     "domain": "To be verified",
     "scale": "To be verified",
-    "tools": ["Excel", "Scenario analysis"],
-    "highlights": ["Organized data and auditable formulas", "Scenario and sensitivity thinking", "Summary outputs for nontechnical stakeholders", "Clear assumptions and limitations"],
-    "statusNote": "Add the approved workbook topic, key assumptions, decision question, and final outputs.",
-    "images": [],
-    "documents": []
+    "tools": [
+      "Excel",
+      "Scenario analysis"
+    ],
+    "highlights": [
+      "Organized data and auditable formulas",
+      "Scenario and sensitivity thinking",
+      "Summary outputs for nontechnical stakeholders",
+      "Clear assumptions and limitations"
+    ],
+    "statusNote": "Add the approved workbook topic, key assumptions, decision question, and final outputs."
   },
   {
     "id": "visualization",
@@ -78,11 +103,18 @@
     "focus": "Clarity and visual hierarchy",
     "domain": "To be verified",
     "scale": "To be verified",
-    "tools": ["R", "Excel", "Power BI"],
-    "highlights": ["Visual hierarchy and chart selection", "Reduction of unnecessary visual noise", "Annotation of key patterns and exceptions", "Connection between evidence and narrative"],
-    "statusNote": "Add approved dashboard screenshots, charts, captions, and accessibility descriptions.",
-    "images": [],
-    "documents": []
+    "tools": [
+      "R",
+      "Excel",
+      "Power BI"
+    ],
+    "highlights": [
+      "Visual hierarchy and chart selection",
+      "Reduction of unnecessary visual noise",
+      "Annotation of key patterns and exceptions",
+      "Connection between evidence and narrative"
+    ],
+    "statusNote": "Add approved dashboard screenshots, charts, captions, and accessibility descriptions."
   },
   {
     "id": "r-analysis",
@@ -95,10 +127,16 @@
     "focus": "Reproducible analysis",
     "domain": "To be verified",
     "scale": "To be verified",
-    "tools": ["R", "Exploratory data analysis"],
-    "highlights": ["Data quality assessment and transformation", "Exploratory summaries and visual analysis", "Reproducible analytical structure", "Focused conclusions tied to the original question"],
-    "statusNote": "Add the verified case topic, code excerpts, visuals, findings, and repository link.",
-    "images": [],
-    "documents": []
+    "tools": [
+      "R",
+      "Exploratory data analysis"
+    ],
+    "highlights": [
+      "Data quality assessment and transformation",
+      "Exploratory summaries and visual analysis",
+      "Reproducible analytical structure",
+      "Focused conclusions tied to the original question"
+    ],
+    "statusNote": "Add the verified case topic, code excerpts, visuals, findings, and repository link."
   }
 ]
