@@ -1,6 +1,6 @@
 {
-  "summary": "MBA candidate with applied experience across data analysis, research, project planning, and business communication. Brings a structured approach to framing questions, selecting methods, interpreting evidence, and presenting decision-ready findings.",
-  "location": "[City, State]",
+  "summary": "Data analyst with 7+ years of experience applying R, Power BI, Excel, Power Query, SQL, and DAX to operational, customer, financial, CRM, and program data. Experienced in recurring KPI reporting, data validation, methodology documentation, root-cause analysis, and translating findings into clear recommendations for technical and nontechnical stakeholders. Recent DFPS research experience and a Professional MBA in Data Analytics in progress.",
+  "location": "Houston, TX",
   "skills": [
     "Data analysis",
     "Research design",
@@ -13,10 +13,10 @@
   ],
   "education": [
     {
-      "dates": "[Expected date]",
-      "title": "Master of Business Administration, Candidate",
-      "organization": "[University name]",
-      "details": "[Concentration, if applicable]"
+      "dates": "May 2027",
+      "title": "Professional Master of Business Administration",
+      "organization": "Houston Christian University",
+      "details": "Data Analytics"
     }
   ],
   "resumeDocument": "uploads/documents/worrel-lee-data-analyst-resume.pdf"
