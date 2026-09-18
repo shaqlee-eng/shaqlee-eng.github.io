@@ -246,10 +246,65 @@ function renderTimeline(container, entries, emptyMessage) {
   });
 }
 
+function renderResumeResearch(container, research) {
+  if (!container) return;
+  container.replaceChildren();
+  if (!research || !research.title) {
+    container.append(make('div', 'notice', 'Professional research details will appear here after they are added in the editor.'));
+    return;
+  }
+
+  const row = make('div', 'resume-entry');
+  row.append(make('time', '', research.publicationStatus || 'Professional research'));
+  const detail = document.createElement('div');
+  const heading = make('h3');
+  const link = make('a', '', research.title);
+  link.href = 'research.html';
+  heading.append(link);
+  detail.append(heading);
+  if (research.team) detail.append(make('p', '', research.team));
+  if (research.overview) detail.append(make('p', '', research.overview));
+  row.append(detail);
+  container.append(row);
+}
+
+function renderResumeProjects(container, projects) {
+  if (!container) return;
+  container.replaceChildren();
+  const selected = Array.isArray(projects)
+    ? projects.filter((item) => item.published !== false && item.featured).slice(0, 3)
+    : [];
+  if (!selected.length) {
+    container.append(make('div', 'notice', 'Projects marked “Feature on homepage” will appear here automatically.'));
+    return;
+  }
+
+  selected.forEach((project) => {
+    const row = make('div', 'resume-entry');
+    row.append(make('time', '', project.workType || 'Applied project'));
+    const detail = document.createElement('div');
+    const heading = make('h3');
+    const link = make('a', '', project.title || 'Untitled project');
+    link.href = `projects.html#${project.id || ''}`;
+    heading.append(link);
+    detail.append(heading);
+    if (project.summary) detail.append(make('p', '', project.summary));
+    const tools = Array.isArray(project.tools) ? project.tools.filter(Boolean) : [];
+    if (tools.length) detail.append(make('p', 'small', `Tools and methods: ${tools.join(', ')}`));
+    row.append(detail);
+    container.append(row);
+  });
+}
+
 async function renderResume() {
   const summary = document.querySelector('#managed-resume-summary');
   if (!summary) return;
-  const [resume, contact] = await Promise.all([loadContent('resume'), loadContent('contact')]);
+  const [resume, contact, projects, research] = await Promise.all([
+    loadContent('resume'),
+    loadContent('contact'),
+    loadContent('projects'),
+    loadContent('research')
+  ]);
   summary.textContent = resume.summary || '';
   const location = document.querySelector('#managed-resume-location');
   if (location) location.textContent = resume.location || '[Location to add]';
@@ -257,6 +312,8 @@ async function renderResume() {
   if (skills && Array.isArray(resume.skills)) skills.replaceChildren(...resume.skills.filter(Boolean).map((skill) => make('div', 'skill-pill', skill)));
   renderTimeline(document.querySelector('#managed-experience'), resume.experience, 'Professional history will appear here after verified entries are added in the editor.');
   renderTimeline(document.querySelector('#managed-education'), resume.education, 'Education details will appear here after verified entries are added in the editor.');
+  renderResumeResearch(document.querySelector('#managed-resume-research'), research);
+  renderResumeProjects(document.querySelector('#managed-resume-projects'), projects);
 
   const documentLink = document.querySelector('#managed-resume-document');
   if (documentLink && resume.resumeDocument) {
