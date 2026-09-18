@@ -1,13 +1,12 @@
 {
   "name": "Worrel S. Lee Jr.",
-  "role": "MBA candidate focused on data analytics, research, and business strategy.",
-  "heroIntro": "I’m Worrel S. Lee Jr., an MBA candidate using data, structured research, and business judgment to turn complex questions into decisions people can act on.",
+  "role": "MBA candidate in Data Analytics at Houston Christian University.",
+  "heroIntro": "I am an MBA candidate in Data Analytics at Houston Christian University with experience using R, Power BI, statistical modeling, and data visualization to analyze complex child welfare data.",
   "aboutHeading": "Curious by practice. Practical by design.",
   "aboutParagraphs": [
-    "My work sits where data, organizations, and decisions meet. I am developing a portfolio that reflects both technical range and the ability to connect analysis with a clear business question.",
-    "As an MBA candidate, I approach analytics as more than a modeling exercise. I consider stakeholders, operating constraints, risk, and the choices a team will need to make. That perspective shapes work ranging from a large-scale renewable energy project management case to predictive analytics and segmentation studies.",
-    "My professional research with the DFPS ACE Analytical Projects Team examines initial CANS domains as potential indicators of reduced placement stability within 24 months. Public materials on this site intentionally stay at the approved, non-confidential level."
+    "I am an MBA candidate in Data Analytics at Houston Christian University, where my coursework has focused on practical data analytics, statistical modeling, and data visualization.",
+    "Through my internship with the DFPS Analytical Projects Team, I have gained experience using R, Power BI, and statistical methods to analyze complex child welfare data. My interests center on using data to uncover meaningful patterns and translate them into practical insights that support better decision-making.",
+    "My professional research presentation, From Acuity to Placement Stability: How Initial CANS Needs Relate to Placement Disruption, examines whether needs identified through the initial CANS are associated with later placement disruption. Public materials on this site are limited to approved portfolio language and do not include presentation slides, visuals, underlying data, or non-public materials."
   ],
-  "headshot": "",
   "headshotAlt": "Professional headshot of Worrel S. Lee Jr."
 }
