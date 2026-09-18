@@ -24,8 +24,8 @@
   },
   {
     "id": "predictive",
-    "published": true,
-    "featured": true,
+    "published": false,
+    "featured": false,
     "category": "analytics",
     "workType": "Applied project · Predictive analytics",
     "title": "Predictive modeling",
@@ -47,8 +47,8 @@
   },
   {
     "id": "segmentation",
-    "published": true,
-    "featured": true,
+    "published": false,
+    "featured": false,
     "category": "analytics",
     "workType": "Applied project · Machine learning",
     "title": "Clustering and k-NN",
@@ -71,7 +71,7 @@
   },
   {
     "id": "excel-modeling",
-    "published": true,
+    "published": false,
     "featured": false,
     "category": "analytics",
     "workType": "Applied project · Business analysis",
@@ -94,7 +94,7 @@
   },
   {
     "id": "visualization",
-    "published": true,
+    "published": false,
     "featured": false,
     "category": "visualization",
     "workType": "Applied project · Communication",
@@ -118,7 +118,7 @@
   },
   {
     "id": "r-analysis",
-    "published": true,
+    "published": false,
     "featured": false,
     "category": "analytics",
     "workType": "Applied project · R analysis",
