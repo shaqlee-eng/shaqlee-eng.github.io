@@ -1,8 +1,16 @@
 {
   "summary": "MBA candidate with applied experience across data analysis, research, project planning, and business communication. Brings a structured approach to framing questions, selecting methods, interpreting evidence, and presenting decision-ready findings.",
   "location": "[City, State]",
-  "skills": ["Data analysis", "Research design", "R", "Excel", "Predictive modeling", "Clustering and k-NN", "Data visualization", "Project management"],
-  "experience": [],
+  "skills": [
+    "Data analysis",
+    "Research design",
+    "R",
+    "Excel",
+    "Predictive modeling",
+    "Clustering and k-NN",
+    "Data visualization",
+    "Project management"
+  ],
   "education": [
     {
       "dates": "[Expected date]",
@@ -11,5 +19,5 @@
       "details": "[Concentration, if applicable]"
     }
   ],
-  "resumeDocument": ""
+  "resumeDocument": "uploads/documents/worrel-lee-data-analyst-resume.pdf"
 }
