@@ -19,5 +19,14 @@
       "details": "Data Analytics"
     }
   ],
-  "resumeDocument": "uploads/documents/worrel-lee-data-analyst-resume.pdf"
+  "resumeDocument": "uploads/documents/worrel-lee-data-analyst-resume.pdf",
+  "experience": [
+    {
+      "dates": "Jun 2026 - Aug 2026",
+      "title": "Research Specialist I, Analytical Projects Team",
+      "organization": "Texas Department of Family and Protective Services (DFPS)",
+      "details": "•\tUsed R to analyze initial CANS assessments and 24-month placement histories, demonstrating measurable associations between early domain scores and subsequent placement instability.\n•\tBuilt Power BI and Excel visualizations, validated analytical outputs, and translated findings across age groups and assessment domains into decision-ready evidence for agency leaders.\n•\tFindings prompted follow-on agency analyses of whether T3C provider credentialing and least-restrictive placement practices influence placement-stability outcomes."
+    },
+    {}
+  ]
 }
