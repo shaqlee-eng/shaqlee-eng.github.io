@@ -27,6 +27,17 @@
       "organization": "Texas Department of Family and Protective Services (DFPS)",
       "details": "•\tUsed R to analyze initial CANS assessments and 24-month placement histories, demonstrating measurable associations between early domain scores and subsequent placement instability.\n•\tBuilt Power BI and Excel visualizations, validated analytical outputs, and translated findings across age groups and assessment domains into decision-ready evidence for agency leaders.\n•\tFindings prompted follow-on agency analyses of whether T3C provider credentialing and least-restrictive placement practices influence placement-stability outcomes."
     },
-    {}
+    {
+      "dates": "Aug 2023 - Jan 2026",
+      "title": "Business Operations Analyst",
+      "organization": "Nexus Auto",
+      "details": "•\tUsed Power BI, Excel, and Power Query to clean, combine, and visualize CRM, financial, customer, and pipeline data for recurring performance analysis.\n•\tApplied R and Excel to investigate performance trends, support forecasting, and refine follow-up workflows, contributing to a 15% improvement in client retention.\n•\tBuilt Power BI KPI reports for leadership and standardized CRM data capture to improve reporting accuracy, consistency, and operational visibility.\n•\tCoordinated customer, vendor, budget, and service priorities and converted operational findings into practical recommendations for leadership."
+    },
+    {
+      "dates": "Oct 2022 - Aug 2023",
+      "title": "Travel Consultant ",
+      "organization": "Vacations To Go ",
+      "details": "•\tMaintained accurate client and booking documentation across vendor and policy requirements; documented root causes of service issues and implemented process corrections."
+    }
   ]
 }
