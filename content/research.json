@@ -1,13 +1,18 @@
 {
-  "title": "Initial CANS domains as indicators of reduced placement stability within 24 months.",
-  "team": "DFPS ACE Analytical Projects Team",
-  "overview": "The project examines whether domains captured in an initial Child and Adolescent Needs and Strengths assessment may serve as indicators of reduced placement stability during the following 24 months.",
-  "publicNote": "This wording is a portfolio-level description based on the available project title. The final publication abstract, author list, publication venue, dates, approved methodology summary, and findings must be inserted from verified source material.",
-  "population": "Placeholder for the approved population definition, inclusion criteria, and study setting.",
-  "exposure": "Initial CANS domains, using the exact approved domain definitions in the final version.",
-  "outcome": "Reduced placement stability within 24 months, using the study’s verified operational definition.",
-  "approach": "Placeholder for the approved study design, measures, models, validation, and sensitivity analysis.",
-  "interpretation": "Placeholder for approved findings, limitations, practical implications, and caution against overinterpretation.",
-  "publicationStatus": "To be verified",
-  "publications": []
+  "title": "From Acuity to Placement Stability: How Initial CANS Needs Relate to Placement Disruption",
+  "team": "DFPS Analytical Projects Team",
+  "overview": "Child welfare agencies have increasingly reported that meeting the needs of children in substitute care has grown more complex in recent years. Building on a prior acuity analysis using Child and Adolescent Needs and Strengths (CANS) assessment data, this project examines whether needs identified through the initial CANS are associated with later placement disruption. The work may help DFPS identify where disruption is concentrated, examine opportunities for earlier stabilization support, and make greater use of information already collected for service and case planning.",
+  "publicNote": "Only approved portfolio language is presented here. Presentation slides, visuals, underlying data, and non-public materials are not included.",
+  "population": "Children removed in 2023, with placement stability tracked over the following 24 months.",
+  "exposure": "Initial CANS assessment responses, including psychiatric crisis history, psychiatric hospitalization history, the Suicide Risk C-SSRS Screener, child risk behaviors, and child behavioral and emotional health needs.",
+  "outcome": "Placement stability, defined as the number of placement moves weighted by whether each move was for a positive or negative reason and whether it increased or decreased placement restrictiveness.",
+  "approach": "Using independent coding in R, Worrel Lee applied descriptive statistics, risk-difference and risk-ratio analyses, regression and burden models, and child-grouped five-fold cross-validation. Data visualizations were developed to translate CANS scores into actionable insights on placement risk for DFPS decision-makers.",
+  "interpretation": "Five initial CANS domains showed the clearest association with later severe placement disruption. Each domain-present group had a higher severe-disruption rate than the corresponding domain-absent group. Psychiatric crisis history showed the largest difference, with severe disruption occurring in 82.9% of domain-present records compared with 18.7% of domain-absent records. The same overall pattern remained under the broader counted-disruption definition. Initial CANS information can identify groups with higher observed rates of later placement disruption, but individual domains should not be used as stand-alone predictors or automatic decision rules. Additional review and validation are needed before operational use.",
+  "publicationStatus": "Presentation summary approved for portfolio use",
+  "publications": [
+    {
+      "title": "From Acuity to Placement Stability: How Initial CANS Needs Relate to Placement Disruption",
+      "abstract": "Objective: Child welfare agencies have increasingly reported that meeting the needs of children in substitute care has grown more complex in recent years. This project examines whether needs identified through the initial CANS are associated with later placement disruption.\n\nMethods: The population included children removed in 2023, with placement stability tracked over the following 24 months. Using independent coding in R, Worrel Lee applied descriptive statistics, risk-difference and risk-ratio analyses, regression and burden models, and child-grouped five-fold cross-validation.\n\nResults: Five initial CANS domains showed the clearest association with later severe placement disruption: psychiatric crisis history, psychiatric hospitalization history, the Suicide Risk C-SSRS Screener, child risk behaviors, and child behavioral and emotional health needs. Psychiatric crisis history showed the largest difference, with severe disruption occurring in 82.9% of domain-present records compared with 18.7% of domain-absent records.\n\nConclusions: Initial CANS information can identify groups of children with higher observed rates of later placement disruption, but individual domains should not be used as stand-alone predictors or automatic decision rules. Additional review and validation are needed before operational use."
+    }
+  ]
 }
