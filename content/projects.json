@@ -62,28 +62,39 @@
     ]
   },
   {
-    "id": "segmentation",
-    "published": false,
-    "featured": false,
+    "id": "credit-card-spending-regression",
+    "published": true,
+    "featured": true,
     "category": "analytics",
-    "workType": "Applied project · Machine learning",
-    "title": "Clustering and k-NN",
-    "summary": "An applied methods case combining segmentation and nearest-neighbor classification. The focus is on defensible feature selection and usable interpretation.",
-    "focus": "Segmentation",
-    "domain": "To be verified",
-    "scale": "To be verified",
+    "workType": "Analytics Case Study · Regression Analysis",
+    "title": "Understanding Consumer Credit Card Spending",
+    "summary": "Examined how annual income and household size relate to annual credit-card charges using descriptive statistics, simple linear regression, and multiple regression. Household size was the stronger individual predictor, explaining 56.7% of observed spending variation compared with 39.8% for income.\n\nCombining both predictors produced a substantially stronger model that explained 82.6% of the observed variation in annual charges. The model was also used to estimate annual charges of approximately $3,699 for a three-person household earning $40,000 per year. The analysis demonstrates how model comparison and careful interpretation can turn a small consumer dataset into a clear managerial recommendation.",
+    "focus": "Multiple regression, model comparison, and managerial interpretation",
+    "domain": "Consumer finance and spending behavior",
+    "scale": "50 consumer records · 3 quantitative variables · 2 simple regression models · 1 multiple regression model · 1 customer-profile prediction",
     "tools": [
       "R",
-      "Clustering",
-      "k-NN"
+      "tidyverse (Package)",
+      "realxl (package)",
+      "Descriptive Statistics",
+      "Simple Linear Regression",
+      "Multiple Linear Regression",
+      "Model Comparison",
+      "Point Prediction",
+      "Data Visualization"
     ],
     "highlights": [
-      "Data scaling and feature selection",
-      "Cluster exploration and profile interpretation",
-      "k-NN setup and performance assessment",
-      "Translation of technical output into audience-ready findings"
+      "Summarized the center, spread, and range of income, household size, and annual credit-card charges",
+      "Estimated separate regression models for income and household size",
+      "Compared explanatory power, adjusted R-squared, and residual standard error across models",
+      "Built a multiple regression model combining financial resources with household demands",
+      "Translated statistical findings into a preferred managerial model",
+      "Identified additional financial, demographic, and behavioral variables that could improve future analysis"
     ],
-    "statusNote": "Add verified dataset context, cluster profiles, k selection process, performance results, and implications."
+    "statusNote": "Academic analytics scenario developed for graduate coursework using a provided 50-consumer dataset. The findings illustrate regression analysis and managerial interpretation; they should not be treated as underwriting guidance, individual credit advice, or a production forecasting model.",
+    "documents": [
+      "uploads/documents/credit-card-spending-regression-reportdocx.docx"
+    ]
   },
   {
     "id": "excel-modeling",
