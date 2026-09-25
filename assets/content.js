@@ -34,7 +34,7 @@ function filename(value) {
   return decodeURIComponent(String(value).split('/').pop() || 'Download document').replace(/[-_]/g, ' ');
 }
 
-function appendMedia(container, item) {
+function fileExtension(value) { const cleanValue = String(value || '').split(/[?#]/)[0]; const match = cleanValue.match(/\.([a-z0-9]+)$/i); return match ? match[1].toLowerCase() : ''; } function powerpointEmbedUrl(value) { if (!['ppt', 'pptx'].includes(fileExtension(value))) return ''; try { const publicUrl = new URL(assetUrl(value), window.location.href); if (publicUrl.protocol !== 'https:') return ''; return `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(publicUrl.href)}`; } catch { return ''; } } function appendMedia(container, item) {
   const images = Array.isArray(item.images) ? item.images.filter(Boolean) : [];
   const documents = Array.isArray(item.documents) ? item.documents.filter(Boolean) : [];
 
@@ -53,7 +53,7 @@ function appendMedia(container, item) {
   }
 
   if (documents.length) {
-    const resources = make('div', 'project-resources');
+    const presentations = documents.map((documentPath) => ({ documentPath, embedUrl: powerpointEmbedUrl(documentPath) })).filter(({ embedUrl }) => embedUrl); presentations.forEach(({ documentPath, embedUrl }) => { const presentation = make('section', 'project-presentation'); presentation.append(make('h3', '', 'Interactive presentation')); const frame = document.createElement('iframe'); frame.className = 'presentation-frame'; frame.src = embedUrl; frame.title = `${item.title || 'Project'} presentation: ${filename(documentPath)}`; frame.loading = 'lazy'; frame.allowFullscreen = true; presentation.append(frame); presentation.append(make('p', 'presentation-note', 'Use the viewer controls to move through the slides. A direct download remains available below.')); container.append(presentation); }); const resources = make('div', 'project-resources');
     resources.append(make('h3', '', 'Downloads'));
     const links = make('div', 'resource-links');
     documents.forEach((documentPath) => {
