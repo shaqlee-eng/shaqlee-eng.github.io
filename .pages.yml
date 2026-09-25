@@ -79,7 +79,7 @@ content:
         list: true
         options:
           media: documents
-          extensions: [pdf, doc, docx, xls, xlsx, csv, r, rmd, zip]
+          extensions: [pdf, doc, docx, xls, xlsx, csv, ppt, pptx, r, rmd, zip]
           rename: safe
 
   - name: research
