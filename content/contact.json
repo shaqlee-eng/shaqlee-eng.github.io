@@ -1,7 +1,12 @@
 {
-  "email": "",
-  "linkedin": "",
-  "github": "",
+  "email": "worrel.lee@outlook.com",
+  "linkedin": "https://www.linkedin.com/in/worrellee/",
+  "github": "worrellee.work",
   "availability": "Open to relevant conversations",
-  "roles": ["Data analyst", "HR analytics", "Research analyst", "Business analyst"]
+  "roles": [
+    "Data analyst",
+    "HR analytics",
+    "Research analyst",
+    "Business analyst"
+  ]
 }
