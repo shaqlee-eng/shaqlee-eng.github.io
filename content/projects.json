@@ -20,30 +20,46 @@
       "Built phase summaries, monthly spend allocations, labor-hour estimates, source notes, and validation checks",
       "Mapped multi-party contractor responsibilities and defined governance, stakeholder priorities, risks, assumptions, constraints, and milestone acceptance criteria"
     ],
-    "statusNote": "Academic planning scenario developed for coursework. Figures represent project assumptions and do not describe an actual Amazon or AWS capital project.", "documents": ["uploads/documents/Project Charter Presentation - Amazon Solar Farm.pptx"]
+    "statusNote": "Academic planning scenario developed for coursework. Figures represent project assumptions and do not describe an actual Amazon or AWS capital project.",
+    "documents": [
+      "uploads/documents/Project Charter Presentation - Amazon Solar Farm.pptx"
+    ]
   },
   {
-    "id": "predictive",
-    "published": false,
-    "featured": false,
+    "id": "vehicle-price-lasso",
+    "published": true,
+    "featured": true,
     "category": "analytics",
-    "workType": "Applied project · Predictive analytics",
-    "title": "Predictive modeling",
-    "summary": "A model development case that connects data preparation, model choice, validation, and interpretation to a defined decision context.",
-    "focus": "Model evaluation",
-    "domain": "To be verified",
-    "scale": "To be verified",
+    "workType": "Analytics Case Study · Predictive Modeling",
+    "title": "Predicting Pre-Owned Vehicle Prices with Lasso Regression",
+    "summary": "Developed and evaluated a regularized regression model using 21,647 pre-owned vehicle records. The analysis combined sparse feature engineering, 10-fold cross-validation, independent test-set evaluation, and automated feature selection to create a disciplined benchmark for data-driven vehicle pricing.\n\nThe selected model produced a validation RMSE of $8,084.68 and a test RMSE of $7,780.07 across 10,824 previously unseen vehicles. Lasso reduced model complexity by eliminating 3,033 of 4,808 modeled predictor terms while retaining signals from vehicle age, manufacturer, model, condition, mileage, drivetrain, location, and other characteristics.",
+    "focus": "Regularized predictive modeling and out-of-sample validation",
+    "domain": "Automotive retail and vehicle pricing analytics",
+    "scale": "21,647 vehicle records · 11 original predictors · 4,808 modeled terms · 10,824-record independent test set · 10-fold cross-validation",
     "tools": [
       "R",
-      "Excel"
+      "glmnet",
+      "Lasso Regression",
+      "Sparse Feature Matrices",
+      "Cross-Validation",
+      "tidyverse (Package)",
+      "Matrix (Package)",
+      "Holdout Testing",
+      "RMSE Evaluation",
+      "Feature Selection"
     ],
     "highlights": [
-      "Question and target definition",
-      "Feature preparation and analytical workflow",
-      "Performance evaluation and model comparison",
-      "Business interpretation with appropriate caveats"
+      "Prepared a mixed-variable dataset and verified that the supplied records contained no missing values",
+      "Converted high-cardinality categorical variables into a computationally efficient sparse model matrix",
+      "Created reproducible training and independent test samples using a fixed random seed",
+      "Selected the lasso penalty through 10-fold cross-validation without using the final test data",
+      "Evaluated predictive performance on 10,824 unseen vehicle records",
+      "Identified limitations involving pricing heterogeneity, high-cardinality predictors, and reliance on a single train-test split"
     ],
-    "statusNote": "Replace with the verified dataset, target variable, evaluation metrics, findings, and selected visuals."
+    "statusNote": "Academic analytics scenario developed for graduate coursework using a provided vehicle dataset. Results demonstrate the modeling process and should be interpreted as an analytical benchmark, not as a deployed pricing system or an automatic final-price recommendation.",
+    "documents": [
+      "uploads/documents/preowned-vehicle-price-prediction-reportdocx.docx"
+    ]
   },
   {
     "id": "segmentation",
