@@ -13,6 +13,49 @@ media:
     rename: safe
 
 content:
+  - name: site
+    label: Site Copy and Page Visuals
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: homeEyebrow, label: Homepage eyebrow, type: string }
+      - { name: homeHeadline, label: Homepage headline, type: string }
+      - { name: homeHeadlineAccent, label: Homepage outlined headline, type: string }
+      - { name: homeIntro, label: Homepage introduction, type: text }
+      - { name: homeWorkflowLabel, label: Homepage workflow label, type: string }
+      - { name: homeWorkflowTitle, label: Homepage workflow title, type: string }
+      - name: homeWorkflowSteps
+        label: Homepage workflow steps
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: title, label: Step title, type: string, required: true }
+          - { name: text, label: Step explanation, type: text, required: true }
+      - { name: projectsEyebrow, label: Projects page eyebrow, type: string }
+      - { name: projectsHeading, label: Projects page heading, type: string }
+      - { name: projectsIntro, label: Projects page introduction, type: text }
+      - { name: projectFrameworkLabel, label: Project framework label, type: string }
+      - { name: projectFrameworkTitle, label: Project framework title, type: string }
+      - name: projectFrameworkSteps
+        label: Project framework steps
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: title, label: Step title, type: string, required: true }
+          - { name: text, label: Step explanation, type: text, required: true }
+      - { name: contactEyebrow, label: Contact page eyebrow, type: string }
+      - { name: contactHeading, label: Contact page heading, type: string }
+      - { name: contactIntro, label: Contact page introduction, type: text }
+      - { name: contactRolesHeading, label: Roles section heading, type: string }
+      - { name: contactDetailsHeading, label: Contact actions heading, type: string }
+
   - name: profile
     label: Profile and About
     type: file
@@ -58,7 +101,11 @@ content:
             - { name: strategy, label: Project strategy }
             - { name: analytics, label: Analytics }
             - { name: visualization, label: Visualization }
-      - { name: workType, label: Work classification, type: string, required: true, description: "Example: Applied project · Predictive analytics" }
+      - name: workType
+        label: Work classification
+        type: string
+        required: true
+        description: "Example: Applied project · Predictive analytics"
       - { name: title, label: Project title, type: string, required: true }
       - { name: summary, label: Executive summary, type: text, required: true }
       - { name: focus, label: Primary focus, type: string }
@@ -167,10 +214,17 @@ content:
     format: json
     fields:
       - { name: email, label: Professional email, type: string }
+      - { name: phone, label: Public phone number, type: string, description: Include country code when appropriate. Leave blank to hide call and text actions. }
       - { name: linkedin, label: LinkedIn URL, type: string }
       - { name: github, label: GitHub URL, type: string }
       - { name: availability, label: Availability message, type: string }
       - { name: roles, label: Roles of interest, type: string, list: true }
+      - { name: showEmail, label: Show email, type: boolean, default: true }
+      - { name: showPhone, label: Show call and text actions, type: boolean, default: false }
+      - { name: showLinkedin, label: Show LinkedIn, type: boolean, default: true }
+      - { name: showGithub, label: Show GitHub, type: boolean, default: false }
+      - { name: showAvailability, label: Show availability message, type: boolean, default: true }
+      - { name: showRoles, label: Show roles of interest, type: boolean, default: true }
 
 settings:
   content:

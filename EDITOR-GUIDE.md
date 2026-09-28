@@ -44,9 +44,13 @@ The `.pages.yml` file in the repository defines those editing screens. No additi
 
 Use the **Resume** section to maintain the professional summary, skills, experience, education, location, and downloadable resume PDF. Bracketed placeholder text can be removed as verified information becomes available.
 
+The **Professional Research** section on the web resume is populated from the **Professional Research** editor. The **Selected Applied Projects** section is populated from published entries in **Projects and Case Studies** that have **Feature on homepage** enabled. This keeps the resume synchronized with the canonical project and research content without duplicate editing.
+
 ## Update contact information
 
-Use **Contact and Role Interests** to add the professional email address, LinkedIn URL, GitHub URL, availability message, and roles of interest. Use full `https://` URLs for LinkedIn and GitHub.
+Use **Site Copy and Page Visuals** to edit the homepage introduction, homepage workflow, projects-page framework, and key Home, Projects, and Contact headings.
+
+Use **Contact and Role Interests** to add the professional email address, phone number, LinkedIn URL, GitHub URL, availability message, and roles of interest. Use the visibility switches to show or hide each public contact method, the roles panel, and the availability message. Use full `https://` URLs for LinkedIn and GitHub.
 
 ## Publishing behavior
 
