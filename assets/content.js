@@ -34,7 +34,24 @@ function filename(value) {
   return decodeURIComponent(String(value).split('/').pop() || 'Download document').replace(/[-_]/g, ' ');
 }
 
-function fileExtension(value) { const cleanValue = String(value || '').split(/[?#]/)[0]; const match = cleanValue.match(/\.([a-z0-9]+)$/i); return match ? match[1].toLowerCase() : ''; } function powerpointEmbedUrl(value) { if (!['ppt', 'pptx'].includes(fileExtension(value))) return ''; try { const publicUrl = new URL(assetUrl(value), window.location.href); if (publicUrl.protocol !== 'https:') return ''; return `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(publicUrl.href)}`; } catch { return ''; } } function appendMedia(container, item) {
+function fileExtension(value) {
+  const cleanValue = String(value || '').split(/[?#]/)[0];
+  const match = cleanValue.match(/\.([a-z0-9]+)$/i);
+  return match ? match[1].toLowerCase() : '';
+}
+
+function powerpointEmbedUrl(value) {
+  if (!['ppt', 'pptx'].includes(fileExtension(value))) return '';
+  try {
+    const publicUrl = new URL(assetUrl(value), window.location.href);
+    if (publicUrl.protocol !== 'https:') return '';
+    return `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(publicUrl.href)}`;
+  } catch {
+    return '';
+  }
+}
+
+function appendMedia(container, item) {
   const images = Array.isArray(item.images) ? item.images.filter(Boolean) : [];
   const documents = Array.isArray(item.documents) ? item.documents.filter(Boolean) : [];
 
@@ -53,7 +70,25 @@ function fileExtension(value) { const cleanValue = String(value || '').split(/[?
   }
 
   if (documents.length) {
-    const presentations = documents.map((documentPath) => ({ documentPath, embedUrl: powerpointEmbedUrl(documentPath) })).filter(({ embedUrl }) => embedUrl); presentations.forEach(({ documentPath, embedUrl }) => { const presentation = make('section', 'project-presentation'); presentation.append(make('h3', '', 'Interactive presentation')); const frame = document.createElement('iframe'); frame.className = 'presentation-frame'; frame.src = embedUrl; frame.title = `${item.title || 'Project'} presentation: ${filename(documentPath)}`; frame.loading = 'lazy'; frame.allowFullscreen = true; presentation.append(frame); presentation.append(make('p', 'presentation-note', 'Use the viewer controls to move through the slides. A direct download remains available below.')); container.append(presentation); }); const resources = make('div', 'project-resources');
+    const presentations = documents
+      .map((documentPath) => ({ documentPath, embedUrl: powerpointEmbedUrl(documentPath) }))
+      .filter(({ embedUrl }) => embedUrl);
+
+    presentations.forEach(({ documentPath, embedUrl }) => {
+      const presentation = make('section', 'project-presentation');
+      presentation.append(make('h3', '', 'Interactive presentation'));
+      const frame = document.createElement('iframe');
+      frame.className = 'presentation-frame';
+      frame.src = embedUrl;
+      frame.title = `${item.title || 'Project'} presentation: ${filename(documentPath)}`;
+      frame.loading = 'lazy';
+      frame.allowFullscreen = true;
+      presentation.append(frame);
+      presentation.append(make('p', 'presentation-note', 'Use the viewer controls to move through the slides. A direct download remains available below.'));
+      container.append(presentation);
+    });
+
+    const resources = make('div', 'project-resources');
     resources.append(make('h3', '', 'Downloads'));
     const links = make('div', 'resource-links');
     documents.forEach((documentPath) => {
@@ -114,11 +149,50 @@ function createHomeCard(item, featured = false) {
   article.append(make('span', item.isResearch ? 'tag research' : 'tag', item.workType));
   article.append(make('h3', '', item.title));
   article.append(make('p', '', item.summary));
+  if (featured && !item.isResearch) {
+    const presentationPath = (Array.isArray(item.documents) ? item.documents : [])
+      .find((documentPath) => powerpointEmbedUrl(documentPath));
+    if (presentationPath) {
+      article.classList.add('has-preview');
+      const preview = make('div', 'home-presentation');
+      const frame = document.createElement('iframe');
+      frame.className = 'home-presentation-frame';
+      frame.src = powerpointEmbedUrl(presentationPath);
+      frame.title = `${item.title || 'Featured project'} presentation preview`;
+      frame.loading = 'lazy';
+      frame.allowFullscreen = true;
+      preview.append(frame);
+      article.append(preview);
+    }
+  }
   const link = make('a', 'card-link', item.isResearch ? 'View research profile ' : 'Open case study ');
   link.href = item.isResearch ? 'research.html' : `projects.html#${item.id}`;
   link.append(make('span', '', '↗'));
   article.append(link);
   return article;
+}
+
+function renderStepList(container, steps) {
+  if (!container || !Array.isArray(steps) || !steps.length) return;
+  container.replaceChildren(...steps.filter((step) => step && (step.title || step.text)).map((step) => {
+    const item = document.createElement('li');
+    item.append(make('strong', '', step.title || 'Step'), make('span', '', step.text || ''));
+    return item;
+  }));
+}
+
+async function renderSite() {
+  const targets = document.querySelectorAll('[data-site]');
+  const homeWorkflow = document.querySelector('#managed-home-workflow');
+  const projectFramework = document.querySelector('#managed-project-framework');
+  if (!targets.length && !homeWorkflow && !projectFramework) return;
+  const site = await loadContent('site');
+  targets.forEach((target) => {
+    const key = target.dataset.site;
+    if (site[key]) target.textContent = site[key];
+  });
+  renderStepList(homeWorkflow, site.homeWorkflowSteps);
+  renderStepList(projectFramework, site.projectFrameworkSteps);
 }
 
 async function renderProfile() {
@@ -321,43 +395,64 @@ async function renderResume() {
     documentLink.hidden = false;
   }
   const email = document.querySelector('#managed-resume-email');
-  if (email) email.textContent = contact.email || '[Professional email]';
+  if (email) {
+    email.textContent = contact.email || '[Professional email]';
+    email.hidden = contact.showEmail === false;
+  }
   const linkedin = document.querySelector('#managed-resume-linkedin');
-  if (linkedin) linkedin.textContent = contact.linkedin || '[LinkedIn URL]';
+  if (linkedin) {
+    linkedin.textContent = contact.linkedin || '[LinkedIn URL]';
+    linkedin.hidden = contact.showLinkedin === false;
+  }
   const github = document.querySelector('#managed-resume-github');
-  if (github) github.textContent = contact.github || '[GitHub URL]';
+  if (github) {
+    github.textContent = contact.github || '[GitHub URL]';
+    github.hidden = contact.showGithub !== true;
+  }
 }
 
 async function renderContact() {
   const roles = document.querySelector('#managed-contact-roles');
   if (!roles) return;
   const contact = await loadContent('contact');
-  roles.replaceChildren(...(contact.roles || []).filter(Boolean).map((role) => make('div', 'skill-pill', role)));
+  const rolesPanel = document.querySelector('#managed-roles-panel');
+  if (rolesPanel) rolesPanel.hidden = contact.showRoles === false;
+  roles.replaceChildren(...(contact.roles || []).filter(Boolean).map((role) => make('div', 'role-item', role)));
   const availability = document.querySelector('#managed-availability');
-  if (availability) availability.textContent = contact.availability || 'Open to relevant conversations';
+  if (availability) {
+    availability.textContent = contact.availability || 'Open to relevant conversations';
+    availability.hidden = contact.showAvailability === false;
+  }
 
-  const details = [
-    ['email', contact.email, contact.email ? `mailto:${contact.email}` : ''],
-    ['linkedin', contact.linkedin, safeExternalUrl(contact.linkedin)],
-    ['github', contact.github, safeExternalUrl(contact.github)]
-  ];
-  details.forEach(([key, value, href]) => {
-    const target = document.querySelector(`[data-contact="${key}"]`);
-    if (!target) return;
-    target.textContent = value || `[${key === 'email' ? 'Professional email' : `${key[0].toUpperCase()}${key.slice(1)} URL`} to add]`;
-    if (href) {
-      target.href = href;
-      if (key !== 'email') {
-        target.target = '_blank';
-        target.rel = 'noopener noreferrer';
+  const setAction = (key, visible, href, external = false) => {
+    const action = document.querySelector(`[data-contact-action="${key}"]`);
+    if (!action) return;
+    action.hidden = !visible || !href;
+    if (!action.hidden) {
+      action.href = href;
+      if (external) {
+        action.target = '_blank';
+        action.rel = 'noopener noreferrer';
       }
-    } else {
-      target.removeAttribute('href');
     }
-  });
+  };
+
+  const phone = String(contact.phone || '').trim();
+  const phoneHref = phone.replace(/[^\d+]/g, '');
+  const emailLabel = document.querySelector('[data-contact="email"]');
+  if (emailLabel) emailLabel.textContent = contact.email || 'Email Worrel';
+  const phoneLabel = document.querySelector('[data-contact="phone"]');
+  if (phoneLabel) phoneLabel.textContent = phone || 'Call Worrel';
+
+  setAction('email', contact.showEmail !== false && Boolean(contact.email), contact.email ? `mailto:${contact.email}` : '');
+  setAction('call', contact.showPhone === true && Boolean(phoneHref), phoneHref ? `tel:${phoneHref}` : '');
+  setAction('text', contact.showPhone === true && Boolean(phoneHref), phoneHref ? `sms:${phoneHref}` : '');
+  setAction('linkedin', contact.showLinkedin !== false, safeExternalUrl(contact.linkedin), true);
+  setAction('github', contact.showGithub === true, safeExternalUrl(contact.github), true);
 }
 
 Promise.allSettled([
+  renderSite(),
   renderProfile(),
   renderProjects(),
   renderFeatured(),
