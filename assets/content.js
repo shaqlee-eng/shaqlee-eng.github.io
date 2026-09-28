@@ -23,7 +23,9 @@ function assetUrl(value) {
 function safeExternalUrl(value) {
   if (!value || typeof value !== 'string') return '';
   try {
-    const url = new URL(value);
+    const input = value.trim();
+    if (/^[a-z][a-z0-9+.-]*:/i.test(input) && !/^https:/i.test(input)) return '';
+    const url = new URL(/^https:/i.test(input) ? input : `https://${input}`);
     return url.protocol === 'https:' ? url.href : '';
   } catch {
     return '';
