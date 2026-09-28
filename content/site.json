@@ -1,0 +1,46 @@
+{
+  "homeEyebrow": "Analytics · Research · Business Strategy",
+  "homeHeadline": "Evidence into action.",
+  "homeHeadlineAccent": "Questions into clarity.",
+  "homeIntro": "I’m Worrel S. Lee Jr., an MBA candidate using data, structured research, and business judgment to turn complex questions into decisions people can act on.",
+  "homeWorkflowLabel": "How I work",
+  "homeWorkflowTitle": "From question to decision",
+  "homeWorkflowSteps": [
+    {
+      "title": "Frame",
+      "text": "Define the decision, audience, constraints, and evidence needed."
+    },
+    {
+      "title": "Analyze",
+      "text": "Use an appropriate, transparent method and test the result."
+    },
+    {
+      "title": "Translate",
+      "text": "Connect findings to implications, trade-offs, and next actions."
+    }
+  ],
+  "projectsEyebrow": "Coursework · Applied projects",
+  "projectsHeading": "Case studies in analysis and execution.",
+  "projectsIntro": "Academic work is reframed here around professional practice: the question, the approach, the analytical choices, and the value of the result.",
+  "projectFrameworkLabel": "How to read the work",
+  "projectFrameworkTitle": "A consistent case-study structure",
+  "projectFrameworkSteps": [
+    {
+      "title": "Frame",
+      "text": "What question or decision shaped the work?"
+    },
+    {
+      "title": "Analyze",
+      "text": "Which methods, tools, and assumptions were used?"
+    },
+    {
+      "title": "Translate",
+      "text": "What should a stakeholder understand or do next?"
+    }
+  ],
+  "contactEyebrow": "Contact",
+  "contactHeading": "Let’s talk about the question behind the data.",
+  "contactIntro": "I’m interested in opportunities where rigorous analysis, clear research, and practical business thinking can improve decisions.",
+  "contactRolesHeading": "Roles of interest",
+  "contactDetailsHeading": "Choose the easiest way to connect"
+}
