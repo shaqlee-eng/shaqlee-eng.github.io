@@ -26,6 +26,44 @@
     ]
   },
   {
+    "id": "cava-growth-capital-allocation",
+    "published": true,
+    "featured": true,
+    "category": "strategy",
+    "workType": "Applied project · Financial modeling and strategy",
+    "title": "CAVA Growth Capital Allocation",
+    "summary": "Built a staged growth-capital allocation model and executive decision memorandum for a hypothetical CAVA investment committee. The analysis compares Washington customer growth, a Portland restaurant entry, and Washington corporate catering using scenario-based present value, break-even, funding, tax, timing, and lease-life sensitivity analysis.\n\nRather than naming a winner from assumption-heavy estimates, the recommendation authorizes only a bounded $225,000 Gate 0 feasibility program within a $300,000 cap and defers Gate 1 execution until primary evidence resolves demand, construction, margin, and lease uncertainties.",
+    "focus": "Capital allocation, financial modeling, and evidence-gated decision design",
+    "domain": "Restaurant growth strategy and corporate finance",
+    "scale": "3 initiatives · 12-quarter FY2027 to FY2029 model · 44-quarter Portland lease-life extension through FY2037 Q3 · 14 Portland scenarios · $5.0M hypothetical portfolio ceiling",
+    "tools": [
+      "Excel financial modeling",
+      "Discounted cash flow and present value analysis",
+      "Scenario and sensitivity analysis",
+      "Break-even analysis",
+      "Fiscal-quarter cash-flow modeling",
+      "Executive decision memorandum"
+    ],
+    "highlights": [
+      "Compared three incremental growth initiatives against business as usual using clearly identified analyst assumptions",
+      "Built a 12-quarter model with funding controls, operating cases, tax treatment, discounting, and audit checks",
+      "Extended the Portland case through a hypothetical 40-quarter lease term and tested cost, delay, operating, tax, and discount-rate sensitivities",
+      "Separated funding capacity from economic merit and recommended a $225,000 Gate 0 diligence program while reserving $75,000 of the Gate 0 ceiling",
+      "Translated model results into evidence requirements for demand, construction, contribution margin, fulfillment, cannibalization, and lease economics",
+      "Reconciled quarterly, annual, dashboard, and full-life outputs while documenting the limits of unequal investment horizons"
+    ],
+    "statusNote": "Independent academic and analytical case using public CAVA disclosures and analyst-created assumptions. This work is not CAVA management guidance, a corporate authorization, or an investment forecast. Figures are illustrative and should not be compared across unequal investment horizons without considering their different durations and assumptions.",
+    "images": [
+      "uploads/images/cava-executive-memorandum-preview.png"
+    ],
+    "documents": [
+      "uploads/documents/CAVA_Stage10T_Executive_Decision_Memorandum.pdf",
+      "uploads/documents/CAVA_Stage10T_Executive_Decision_Memorandum.docx",
+      "uploads/documents/CAVA_Strategic_Growth_Stage10P_Quarterly_Model.xlsx",
+      "uploads/documents/CAVA_Strategic_Growth_Stage10R_Full_Life_Model.xlsx"
+    ]
+  },
+  {
     "id": "vehicle-price-lasso",
     "published": true,
     "featured": true,
