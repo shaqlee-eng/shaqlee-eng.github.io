@@ -128,6 +128,9 @@
       "Identified additional financial, demographic, and behavioral variables that could improve future analysis"
     ],
     "statusNote": "Academic analytics scenario developed for graduate coursework using a provided 50-consumer dataset. The findings illustrate regression analysis and managerial interpretation; they should not be treated as underwriting guidance, individual credit advice, or a production forecasting model.",
+    "images": [
+      "uploads/images/cava-pilot-scenario-pv-1.png"
+    ],
     "documents": [
       "uploads/documents/credit-card-spending-regression-reportdocx.docx"
     ]
